@@ -1,0 +1,68 @@
+img {
+  width: 50px; /* Feste Breite für das Bild */
+  flex-shrink: 0; /* Verhindert, dass das Bild verkleinert wird */
+  margin-left: 5px;
+  margin-top: 5px;
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.cookieBanner {
+  background-color: black;
+  border: 1px solid black;
+  width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: fixed; /* Positioniert das Element relativ zum Viewport */
+  bottom: 20px; /* Abstand von unten, z.B. 20px */
+  right: 20px; /* Abstand von rechts, z.B. 20px */
+  z-index: 1000; /* Stellt sicher, dass der Banner über anderen Elementen angezeigt wird */
+}
+
+/* Die ersten beiden Elemente im Flex-Layout belassen */
+.cookieBanner > *:nth-child(1),
+.cookieBanner > *:nth-child(2) {
+  flex: 0 1 auto; /* Flex-Eigenschaften angepasst, um die automatische Breite beizubehalten */
+}
+
+/* Ab dem dritten Element umschalten, damit es untereinander angezeigt wird */
+.cookieBanner > *:nth-child(n + 3) {
+  flex: 1 1 100%;
+}
+
+/* Stil für die Schließen-Schaltfläche */
+.schließen {
+  color: grey;
+  position: relative;
+  left: 250px;
+  bottom: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.mittelung {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: default;
+}
+
+.annehmen {
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin: 10px 50px;
+  height: 40px;
+  cursor: pointer;
+}
+
+div {
+  border-radius: 10px;
+}
+
+.cookieBanner {
+  display: none; /* Banner standardmäßig ausblenden */
+  /* andere Stile hier... */
+}
